@@ -1,5 +1,5 @@
-import { UsersService } from 'src/users/users.service';
-import type { UserTypes } from 'src/schemas';
+import { UsersService } from './users.service';
+import type { UserTypes } from '../schemas';
 export declare class UsersController {
     private readonly usersService;
     constructor(usersService: UsersService);

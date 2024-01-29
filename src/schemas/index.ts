@@ -1,3 +1,3 @@
-export * from 'src/schemas/users.schema';
-export * from 'src/schemas/games.schema';
-export * from 'src/schemas/rounds.schema';
+export * from './users.schema';
+export * from './games.schema';
+export * from './rounds.schema';

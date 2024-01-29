@@ -17,8 +17,8 @@ const common_1 = require("@nestjs/common");
 const nestjs_zod_1 = require("nestjs-zod");
 const schemas_1 = require("../schemas");
 const token_guard_1 = require("../token/token.guard");
-const users_service_1 = require("./users.service");
 const exclude_utils_1 = require("../utils/exclude.utils");
+const users_service_1 = require("./users.service");
 let UsersController = class UsersController {
     constructor(usersService) {
         this.usersService = usersService;

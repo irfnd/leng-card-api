@@ -1,6 +1,6 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
-import { AppModule } from 'src/app.module';
-import { PrismaClientExceptionFilter } from 'src/prisma/prisma.exception';
+import { AppModule } from './app.module';
+import { PrismaClientExceptionFilter } from './prisma/prisma.exception';
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);

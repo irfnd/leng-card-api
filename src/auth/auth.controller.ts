@@ -1,11 +1,11 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post, UseGuards } from '@nestjs/common';
 import { UseZodGuard } from 'nestjs-zod';
-import { AuthService } from 'src/auth/auth.service';
-import { UserDto } from 'src/schemas';
-import { TokenRefreshContext } from 'src/token/token-refresh.decorator';
-import { TokenRefreshGuard } from 'src/token/token-refresh.guard';
+import { UserDto } from '../schemas';
+import { TokenRefreshContext } from '../token/token-refresh.decorator';
+import { TokenRefreshGuard } from '../token/token-refresh.guard';
+import { AuthService } from './auth.service';
 
-import type { UserTypes } from 'src/schemas';
+import type { UserTypes } from '../schemas';
 
 @Controller()
 export class AuthController {

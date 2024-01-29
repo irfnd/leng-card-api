@@ -1,11 +1,11 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from '@nestjs/common';
 import { UseZodGuard } from 'nestjs-zod';
-import { UserDto } from 'src/schemas';
-import { TokenGuard } from 'src/token/token.guard';
-import { UsersService } from 'src/users/users.service';
-import { Exclude } from 'src/utils/exclude.utils';
+import { UserDto } from '../schemas';
+import { TokenGuard } from '../token/token.guard';
+import { Exclude } from '../utils/exclude.utils';
+import { UsersService } from './users.service';
 
-import type { UserTypes } from 'src/schemas';
+import type { UserTypes } from '../schemas';
 
 @UseGuards(TokenGuard)
 @Controller('users')

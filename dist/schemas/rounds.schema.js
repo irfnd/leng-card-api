@@ -28,8 +28,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoundDto = exports.RoundSchema = void 0;
 const z = __importStar(require("nestjs-zod/z"));
-const error_messages_1 = require("./error.messages");
 const validator_1 = __importDefault(require("validator"));
+const error_messages_1 = require("./error.messages");
 const { round } = error_messages_1.messages;
 exports.RoundSchema = z.object({
     id: z.string().trim().refine(validator_1.default.isMongoId, { message: round.id.valid }).describe("Round's ID"),

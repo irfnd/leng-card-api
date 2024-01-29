@@ -15,10 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthController = void 0;
 const common_1 = require("@nestjs/common");
 const nestjs_zod_1 = require("nestjs-zod");
-const auth_service_1 = require("./auth.service");
 const schemas_1 = require("../schemas");
 const token_refresh_decorator_1 = require("../token/token-refresh.decorator");
 const token_refresh_guard_1 = require("../token/token-refresh.guard");
+const auth_service_1 = require("./auth.service");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;

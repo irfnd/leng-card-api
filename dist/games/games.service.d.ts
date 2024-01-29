@@ -1,5 +1,5 @@
-import { PrismaService } from 'src/prisma/prisma.service';
-import type { GameTypes } from 'src/schemas';
+import { PrismaService } from '../prisma/prisma.service';
+import type { GameTypes } from '../schemas';
 export declare class GamesService {
     private prisma;
     constructor(prisma: PrismaService);

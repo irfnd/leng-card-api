@@ -15,9 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoundsController = void 0;
 const common_1 = require("@nestjs/common");
 const nestjs_zod_1 = require("nestjs-zod");
-const rounds_service_1 = require("./rounds.service");
 const schemas_1 = require("../schemas");
 const token_guard_1 = require("../token/token.guard");
+const rounds_service_1 = require("./rounds.service");
 let RoundsController = class RoundsController {
     constructor(roundsService) {
         this.roundsService = roundsService;

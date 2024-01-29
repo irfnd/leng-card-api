@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { ParseUtils } from 'src/utils/parse.utils';
+import { PrismaService } from '../prisma/prisma.service';
+import { ParseUtils } from '../utils/parse.utils';
 
-import type { GameTypes } from 'src/schemas';
+import type { GameTypes } from '../schemas';
 
 @Injectable()
 export class GamesService {

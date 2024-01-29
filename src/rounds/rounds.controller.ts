@@ -1,10 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from '@nestjs/common';
 import { UseZodGuard } from 'nestjs-zod';
-import { RoundsService } from 'src/rounds/rounds.service';
-import { RoundDto } from 'src/schemas';
-import { TokenGuard } from 'src/token/token.guard';
+import { RoundDto } from '../schemas';
+import { TokenGuard } from '../token/token.guard';
+import { RoundsService } from './rounds.service';
 
-import type { RoundTypes } from 'src/schemas';
+import type { RoundTypes } from '../schemas';
 
 @UseGuards(TokenGuard)
 @Controller('rounds')

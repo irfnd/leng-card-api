@@ -1,5 +1,5 @@
-import { RoundsService } from 'src/rounds/rounds.service';
-import type { RoundTypes } from 'src/schemas';
+import { RoundsService } from './rounds.service';
+import type { RoundTypes } from '../schemas';
 export declare class RoundsController {
     private readonly roundsService;
     constructor(roundsService: RoundsService);

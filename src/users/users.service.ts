@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import * as argon2 from 'argon2';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { ParseUtils } from 'src/utils/parse.utils';
+import { PrismaService } from '../prisma/prisma.service';
+import { ParseUtils } from '../utils/parse.utils';
 
-import type { UserTypes } from 'src/schemas';
+import type { UserTypes } from '../schemas';
 
 @Injectable()
 export class UsersService {

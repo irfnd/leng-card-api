@@ -1,6 +1,6 @@
 import * as z from 'nestjs-zod/z';
-import { messages } from 'src/schemas/error.messages';
 import validator from 'validator';
+import { messages } from './error.messages';
 
 const { round } = messages;
 

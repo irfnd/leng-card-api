@@ -1,5 +1,5 @@
-import { AuthService } from 'src/auth/auth.service';
-import type { UserTypes } from 'src/schemas';
+import { AuthService } from './auth.service';
+import type { UserTypes } from '../schemas';
 export declare class AuthController {
     private readonly authService;
     constructor(authService: AuthService);

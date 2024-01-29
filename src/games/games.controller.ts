@@ -1,11 +1,11 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards } from '@nestjs/common';
 import { UseZodGuard } from 'nestjs-zod';
-import { GamesService } from 'src/games/games.service';
-import { GameDto } from 'src/schemas';
-import { TokenGuard } from 'src/token/token.guard';
+import { GameDto } from '../schemas';
+import { TokenGuard } from '../token/token.guard';
+import { Exclude } from '../utils/exclude.utils';
+import { GamesService } from './games.service';
 
-import type { GameTypes } from 'src/schemas';
-import { Exclude } from 'src/utils/exclude.utils';
+import type { GameTypes } from '../schemas';
 
 @UseGuards(TokenGuard)
 @Controller('games')

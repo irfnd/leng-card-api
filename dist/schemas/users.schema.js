@@ -29,8 +29,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserDto = exports.UserSchema = void 0;
 const lodash_1 = __importDefault(require("lodash"));
 const z = __importStar(require("nestjs-zod/z"));
-const error_messages_1 = require("./error.messages");
 const validator_1 = __importDefault(require("validator"));
+const error_messages_1 = require("./error.messages");
 const { user } = error_messages_1.messages;
 exports.UserSchema = z.object({
     id: z.string().trim().refine(validator_1.default.isMongoId, { message: user.id.valid }).describe("User's ID"),

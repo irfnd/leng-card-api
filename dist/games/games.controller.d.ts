@@ -1,5 +1,5 @@
-import { GamesService } from 'src/games/games.service';
-import type { GameTypes } from 'src/schemas';
+import { GamesService } from './games.service';
+import type { GameTypes } from '../schemas';
 export declare class GamesController {
     private readonly gamesService;
     constructor(gamesService: GamesService);

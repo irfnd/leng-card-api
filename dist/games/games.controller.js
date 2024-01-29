@@ -15,10 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GamesController = void 0;
 const common_1 = require("@nestjs/common");
 const nestjs_zod_1 = require("nestjs-zod");
-const games_service_1 = require("./games.service");
 const schemas_1 = require("../schemas");
 const token_guard_1 = require("../token/token.guard");
 const exclude_utils_1 = require("../utils/exclude.utils");
+const games_service_1 = require("./games.service");
 let GamesController = class GamesController {
     constructor(gamesService) {
         this.gamesService = gamesService;

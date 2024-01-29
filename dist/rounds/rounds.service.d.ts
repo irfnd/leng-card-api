@@ -1,5 +1,5 @@
-import { PrismaService } from 'src/prisma/prisma.service';
-import type { RoundTypes } from 'src/schemas';
+import { PrismaService } from '../prisma/prisma.service';
+import type { RoundTypes } from '../schemas';
 export declare class RoundsService {
     private prisma;
     constructor(prisma: PrismaService);

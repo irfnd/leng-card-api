@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as z from 'nestjs-zod/z';
-import { messages } from 'src/schemas/error.messages';
 import validator from 'validator';
+import { messages } from './error.messages';
 
 const { game } = messages;
 
