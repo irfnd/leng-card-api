@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  leng-primary:
+    image: bitnami/mongodb:latest
+    environment:
+      MONGODB_ADVERTISED_HOSTNAME: leng-primary
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_ROOT_USER: admin
+      MONGODB_ROOT_PASSWORD: AdminLeng123.
+      MONGODB_REPLICA_SET_KEY: LengSecretKey123
+    ports:
+      - "27017:27017"
+    volumes:
+      - "leng-db:/db"
+
+  leng-secondary:
+    image: bitnami/mongodb:latest
+    depends_on:
+      - leng-primary
+    environment:
+      MONGODB_ADVERTISED_HOSTNAME: leng-secondary
+      MONGODB_REPLICA_SET_MODE: secondary
+      MONGODB_INITIAL_PRIMARY_HOST: leng-primary
+      MONGODB_INITIAL_PRIMARY_PORT_NUMBER: 27017
+      MONGODB_INITIAL_PRIMARY_ROOT_USER: admin
+      MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD: AdminLeng123.
+      MONGODB_REPLICA_SET_KEY: LengSecretKey123
+
+  leng-arbiter:
+    image: bitnami/mongodb:latest
+    depends_on:
+      - leng-primary
+    environment:
+      MONGODB_ADVERTISED_HOSTNAME: leng-arbiter
+      MONGODB_REPLICA_SET_MODE: arbiter
+      MONGODB_INITIAL_PRIMARY_HOST: leng-primary
+      MONGODB_INITIAL_PRIMARY_PORT_NUMBER: 27017
+      MONGODB_INITIAL_PRIMARY_ROOT_USER: admin
+      MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD: AdminLeng123.
+      MONGODB_REPLICA_SET_KEY: LengSecretKey123
+
+volumes:
+  leng-db:
+    driver: local

@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+// Roles Enum
+enum Roles {
+  admin
+  user
+}
+
+// Users Model
+model Users {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  username String   @unique
+  email    String   @unique
+  name     String
+  role     Roles?   @default(value: user)
+  password String
+  bio      String?
+  gameIds  String[] @db.ObjectId
+  games    Games[]  @relation(fields: [gameIds], references: [id])
+  rounds   Rounds[]
+}
+
+// Games Model
+model Games {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  descriptions String?
+  totalPoint   Int
+  userIds      String[]  @db.ObjectId
+  createdAt    DateTime? @default(now())
+  users        Users[]   @relation(fields: [userIds], references: [id])
+  rounds       Rounds[]
+}
+
+// Rounds Model
+model Rounds {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  gameId    String    @db.ObjectId
+  userId    String    @db.ObjectId
+  point     Int
+  isDead    Boolean?  @default(false)
+  isLeng    Boolean?  @default(false)
+  createdAt DateTime? @default(now())
+  user      Users     @relation(fields: [userId], references: [id])
+  games     Games     @relation(fields: [gameId], references: [id])
+}
